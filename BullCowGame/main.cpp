@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "FBullCowGame.h"
 
 
 
@@ -8,7 +9,8 @@ void PlayGame();
 std::string GetGuess();
 bool AskToPlayAgain();
 
-void PrintGuess(std::string &Guess);
+FBullCowGame BCGame; //instantiate a new game
+
 
 int main() {
 	bool bPlayAgain = false;
@@ -31,9 +33,11 @@ void PrintIntro() {
 }
 
 void PlayGame() {
+	int MaxTries = BCGame.GetMaxTries();
 
-	constexpr int NUMBER_OF_TURNS = 5;
-	for (int i = 0; i < NUMBER_OF_TURNS; i++) {
+	std::cout << MaxTries << std::endl;
+
+	for (int i = 0; i < MaxTries; i++) {
 		std::string Guess = GetGuess();
 		PrintGuess(Guess);
 	}
