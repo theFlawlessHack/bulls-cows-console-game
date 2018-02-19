@@ -35,9 +35,8 @@ int main() {
 
 void PrintIntro() {
 	// introduce game
-	constexpr int32 WORD_LENGTH = 5;
 	std::cout << "Welcome to Bulls and Cows, a fun word game." << std::endl;
-	std::cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?" << std::endl;
+	std::cout << "Can you guess the " << BCGame.GetHiddenWordLength() << " letter isogram I'm thinking of?" << std::endl << std::endl;
 
 	return;
 }
@@ -46,22 +45,23 @@ void PlayGame() {
 	BCGame.Reset();
 	int32 MaxTries = BCGame.GetMaxTries();
 
-	std::cout << MaxTries << std::endl;
-
 	// TODO change from FOR to WHILE loop
 	for (int32 i = 0; i < MaxTries; i++) {
 		FText Guess = GetGuess(); // make looop checking valid
 
 		// submit valid guess to the game
+
+		FBullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
 		// print # of bulls and cows
-		PrintGuess(Guess);
+		// PrintGuess(Guess);
+		std::cout << "Bulls = " << BullCowCount.Bulls;
+		std::cout << ". Cows = " << BullCowCount.Cows << std::endl << std::endl;
 	}
 }
 
 FText GetGuess() {
 
 	std::cout << "Try " << BCGame.GetCurrentTry() <<". Enter your guess: ";
-	BCGame.increaseCurrentTry();
 
 	// get a guess from the player
 	FText Guess;
@@ -73,7 +73,7 @@ FText GetGuess() {
 void PrintGuess(FText &Guess)
 {
 	// repeat guess back to the player
-	std::cout << "Your guess was: " << Guess << std::endl << std::endl;
+	std::cout << "Your guess was: " << Guess << std::endl;
 }
 
 bool AskToPlayAgain() {
