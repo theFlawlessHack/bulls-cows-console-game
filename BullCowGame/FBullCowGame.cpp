@@ -14,7 +14,7 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const {
 	else if (!IsIsogram(Guess)) {
 		return EGuessStatus::Not_Isogram;
 	}
-	else if (false) {
+	else if (!IsLowercase(Guess)) {
 		return EGuessStatus::Not_Lowercase;
 	} else {
 		return EGuessStatus::OK;
@@ -51,7 +51,7 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess) {
 }
 
 
-void FBullCowGame::Reset(){
+void FBullCowGame::Reset() {
 	constexpr int32 MAX_TRIES = 8;
 	const FString HIDDEN_WORD = "ant";
 
@@ -63,9 +63,8 @@ void FBullCowGame::Reset(){
 	return;
 }
 
-// private methods
-bool FBullCowGame::IsIsogram(FString Word) const
-{
+// Helper functions
+bool FBullCowGame::IsIsogram(FString Word) const {
 
 	if (Word.length() <= 1) { return true; }
 	
@@ -79,6 +78,15 @@ bool FBullCowGame::IsIsogram(FString Word) const
 		}
 		else {
 			LetterSeen[Letter] = true;
+		}
+	}
+	return true;
+}
+
+bool FBullCowGame::IsLowercase(FString Word) const {
+	for (auto Letter : Word) {
+		if (!islower(Letter)) {
+			return false;
 		}
 	}
 	return true;
