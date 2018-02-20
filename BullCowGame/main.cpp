@@ -32,13 +32,20 @@ int main() {
 		PrintIntro();
 		PlayGame();
 		bPlayAgain = AskToPlayAgain();
+		std::cout << std::endl;
 	} while (bPlayAgain);
 	return 0;
 }
 
 void PrintIntro() {
 	// introduce game
-	std::cout << "\nWelcome to Bulls and Cows, a fun word game." << std::endl;
+	std::cout << "Welcome to Bulls and Cows, a fun word game." << std::endl;
+	std::cout << "           }    {           ___" << std::endl;
+	std::cout << "           (o o)           (o o)" << std::endl;
+	std::cout << "  /---------\\ /             \\ /--------\\" << std::endl;
+	std::cout << " / |  BULL  |O               O|  COW  | \\" << std::endl;
+	std::cout << "*  |-,----- |                 | ------|  *" << std::endl;
+	std::cout << "   ^        ^                 ^       ^" << std::endl;
 	std::cout << "Can you guess the " << BCGame.GetHiddenWordLength() << " letter isogram I'm thinking of?" << std::endl << std::endl;
 
 	return;
