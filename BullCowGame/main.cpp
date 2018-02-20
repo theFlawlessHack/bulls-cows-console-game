@@ -4,11 +4,14 @@ Created by Jessica Joseph
 This is the console executable that makes use of the BullCow class.
 This acts as the view in the MVC pattern, and is responsible for all user interaction.
 For game logic see the FBullCowGame class.
+
+This project follows the Unreal C++ Coding style.
 */
 
 #include <iostream>
 #include <string>
 #include "FBullCowGame.h"
+
 
 using FText = std::string;
 using int32 = int;
