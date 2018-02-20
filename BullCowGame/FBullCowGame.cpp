@@ -26,12 +26,11 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const {
 	}
 }
 
-// receives a VALID guess, incrementeas turn, returns count
 FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess) {
 	MyCurrentTry++;
 
 	FBullCowCount BullCowCount;
-	int32 WordLength = MyHiddenWord.length(); // assuming same length as guess
+	int32 WordLength = MyHiddenWord.length(); 
 
 	for (int32 MHWChar = 0; MHWChar < WordLength; MHWChar++) { // MHWChar, MyHiddenWordChar
 		for (int32 GChar = 0; GChar < WordLength; GChar++) { // GChar, GuessChar
@@ -58,7 +57,7 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess) {
 
 void FBullCowGame::Reset() {
 	constexpr int32 MAX_TRIES = 8;
-	const FString HIDDEN_WORD = "planet";
+	const FString HIDDEN_WORD = "planet"; // must be an isogram
 
 	bGameIsWon = false;
 	MyHiddenWord = HIDDEN_WORD;

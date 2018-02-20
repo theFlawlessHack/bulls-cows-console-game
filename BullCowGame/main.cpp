@@ -12,7 +12,7 @@ This project follows the Unreal C++ Coding style.
 #include <string>
 #include "FBullCowGame.h"
 
-
+// to make syntax Unreal friendly
 using FText = std::string;
 using int32 = int;
 
@@ -38,7 +38,6 @@ int main() {
 }
 
 void PrintIntro() {
-	// introduce game
 	std::cout << "Welcome to Bulls and Cows, a fun word game." << std::endl;
 	std::cout << "           }    {           ___" << std::endl;
 	std::cout << "           (o o)           (o o)" << std::endl;
@@ -51,11 +50,11 @@ void PrintIntro() {
 	return;
 }
 
+// plays a single game to completion
 void PlayGame() {
 	BCGame.Reset();
 	int32 MaxTries = BCGame.GetMaxTries();
 
-	// loop asking for guesses while the game is NOT won and there are still tries remaining
 	while (!BCGame.IsGameWon() && BCGame.GetCurrentTry() <= MaxTries) {
 		
 		FText Guess = GetValidGuess(); 
@@ -70,7 +69,6 @@ void PlayGame() {
 	return;
 }
 
-// loop until a valid guess is given
 FText GetValidGuess() {
 	EGuessStatus Status = EGuessStatus::Invalid_Status;
 	FText Guess;
@@ -78,7 +76,6 @@ FText GetValidGuess() {
 	do {
 		std::cout << "Try " << BCGame.GetCurrentTry() << " of " << BCGame.GetMaxTries()<< ". Enter your guess: ";
 
-		// get a guess from the player
 		std::getline(std::cin, Guess);
 
 		Status = BCGame.CheckGuessValidity(Guess);

@@ -1,4 +1,10 @@
-#pragma once
+/*
+Created by Jessica Joseph
+
+This is the header class of the BullsCowsGame.
+The Bulls Cows Game is a word game where users guess the X letter isogram.
+*/
+
 #include <string>
 #include <map>
 
@@ -26,12 +32,12 @@ public:
 	FBullCowGame();
 
 	bool IsGameWon() const;
-	EGuessStatus CheckGuessValidity(FString) const; // TODO: make a more rich return value.
+	EGuessStatus CheckGuessValidity(FString) const; 
 	int32 GetMaxTries() const;
 	int32 GetCurrentTry() const;
 	int32 GetHiddenWordLength() const;
 
-	void Reset(); // TODO: make a more rich return value
+	void Reset();
 
 	FBullCowCount SubmitValidGuess(FString Guess);
 
