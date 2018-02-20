@@ -53,7 +53,7 @@ FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess) {
 
 void FBullCowGame::Reset() {
 	constexpr int32 MAX_TRIES = 8;
-	const FString HIDDEN_WORD = "ant";
+	const FString HIDDEN_WORD = "planet";
 
 	bGameIsWon = false;
 	MyHiddenWord = HIDDEN_WORD;
