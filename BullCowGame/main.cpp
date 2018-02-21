@@ -39,7 +39,7 @@ int main() {
 
 void PrintIntro() {
 	std::cout << "Welcome to Bulls and Cows, a fun word game." << std::endl;
-	std::cout << "           }    {           ___" << std::endl;
+	std::cout << "           }   {           ___" << std::endl;
 	std::cout << "           (o o)           (o o)" << std::endl;
 	std::cout << "  /---------\\ /             \\ /--------\\" << std::endl;
 	std::cout << " / |  BULL  |O               O|  COW  | \\" << std::endl;
