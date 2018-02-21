@@ -10,10 +10,14 @@ A bull indicates a correct value, correct position and a cow indicates a correct
 
 ## Getting Started
 
-`git clone` or fork the repo
+`git clone` the repo to your local machine
 
 #### Windows
- `git checkout "visual-studio"`
+ `git checkout visual-studio`
+ - Open the visual studio solution
+ - `Ctrl + F5` to run without debugging
 
 #### Mac
-Create an xcode project and add the BullCowGame Folder, run!
+`git checkout xcode`
+- Open the xcode project
+- `Cmd + r` to run
