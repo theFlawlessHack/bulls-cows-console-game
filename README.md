@@ -14,6 +14,3 @@ A bull indicates a correct value, correct position and a cow indicates a correct
 
 #### Windows
  `git checkout "visual-studio"`
-
-#### Mac
- `git checkout "xcode"`
