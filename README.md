@@ -14,3 +14,6 @@ A bull indicates a correct value, correct position and a cow indicates a correct
 
 #### Windows
  `git checkout "visual-studio"`
+
+#### Mac
+Create an xcode project and add the BullCowGame Folder, run!
